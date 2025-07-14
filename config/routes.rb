@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get "up" => "rails/health#show", as: :rails_health_check
+  root 'pages#home'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
 
-  root 'pages#index'
+  #OAuth
+  # namespace :oauth do 
+  #   namespace :google_oauth2 do 
+  #     get "callback"
+  #   end
+  # end
 end
