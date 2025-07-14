@@ -36,6 +36,10 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 
+gem 'google_drive', '~> 3.0'
+gem 'googleauth'
+gem 'faraday'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 

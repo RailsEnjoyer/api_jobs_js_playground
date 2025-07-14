@@ -6,10 +6,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  #OAuth
-  # namespace :oauth do 
-  #   namespace :google_oauth2 do 
-  #     get "callback"
-  #   end
-  # end
+  resources :feeling_entries, only: [:index, :new, :create] do
+    collection do
+      post :sync
+    end
+  end
 end

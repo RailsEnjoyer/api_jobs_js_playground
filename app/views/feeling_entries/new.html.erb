@@ -1,0 +1,15 @@
+<h1>New note</h1>
+
+<%= form_with model: @feeling_entry, local: true do |f| %>
+  <div>
+    <%= f.label :mood, "Emotion" %><br>
+    <%= f.text_field :mood %>
+  </div>
+
+  <div>
+    <%= f.label :note, "Description" %><br>
+    <%= f.text_area :note %>
+  </div>
+
+  <%= f.submit "Save" %>
+<% end %>

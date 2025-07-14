@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :feeling_entries, dependent: :destroy
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]

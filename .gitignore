@@ -34,3 +34,6 @@
 /config/master.key
 
 /config/credentials/development.key
+
+/config/google_sheets_credentials.json
+

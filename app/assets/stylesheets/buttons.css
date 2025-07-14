@@ -106,3 +106,14 @@
   background-color: white;
   opacity: 8%;
 }
+
+.sync-button {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #eaeaea;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  border: 2px solid;
+  border-radius: 4px;
+  font-weight: bold;
+}
