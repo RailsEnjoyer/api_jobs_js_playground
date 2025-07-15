@@ -13,7 +13,7 @@ class FeelingEntriesController < ApplicationController
     @feeling_entry = current_user.feeling_entries.build(feeling_entry_params)
 
     if @feeling_entry.save
-      GoogleSheetsService.new.write(@feeling_entry)
+      GoogleSheetsWriterJob.perform_later(@feeling_entry.id)
       redirect_to feeling_entries_path, notice: "Feeling saved!"
     else
       render :new
@@ -21,7 +21,7 @@ class FeelingEntriesController < ApplicationController
   end
 
   def sync
-    GoogleSheetsSyncer.new(current_user).sync!
+    GoogleSheetsSyncerJob.perform_now(current_user)
     redirect_to feeling_entries_path, notice: "Synchronized!"
   end
 

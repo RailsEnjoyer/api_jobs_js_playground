@@ -40,6 +40,8 @@ gem 'google_drive', '~> 3.0'
 gem 'googleauth'
 gem 'faraday'
 
+gem 'sidekiq'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
